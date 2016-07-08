@@ -40,6 +40,7 @@ def get_all_conversations_from_episode(html):
     data = html.replace('\n', '')
     data = data.strip()
     data = re.sub(r'\([^)]*\)', '', data)
+    data = re.sub(r'\[[^]]*\]', '', data)
 
     conversatios = data.split("<br>")
     conversatios = [s for s in conversatios if s]
