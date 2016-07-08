@@ -25,7 +25,7 @@ class SolrEstimator(object):
 
         words = []
         for word, tag in pos:
-            if(tag == 'NNP' and len(word) > 3):
+            if(tag == 'NNP' and len(word) > 3 and word != 'Great'):
                 words.append(word)
 
         for word in words:
