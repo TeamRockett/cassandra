@@ -21,7 +21,7 @@ class SolrService(object):
 
         return dialogues
 
-    def getBestDialogues(self, cols, tf=1, df = 1, count = 10):
+    def getBestDialogues(self, cols, tf=1, df = 1, count = 1):
         similar = self.conn.more_like_this(q='is_tmp:true', mltfl=cols, **{'mlt.mindf': df, 'mlt.mintf' : tf, 'mlt.count' : count})
         dialogues = []
         for dialogue in similar:
